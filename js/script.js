@@ -15,8 +15,8 @@ function addTodo() {
     newRow.innerHTML = `
         <td>${todoInput.value}</td>
         <td>${dateInput.value}</td>
-        <td><button class="status-btn" onclick="toggleStatus(this)">PENDING</button></td>
-        <td><button onclick="deleteTodo(this)">DELETE</button></td>
+        <td><button class="status-btn" onclick="toggleStatus(this)">Pending</button></td>
+        <td><button onclick="deleteTodo(this)">Delete</button></td>
     `;
 
     if (todoList.children[0]?.innerHTML === 'No task found') {
@@ -29,7 +29,7 @@ function addTodo() {
 }
 
 function toggleStatus(button) {
-    button.innerText = button.innerText === "PENDING" ? "COMPLETED" : "PENDING";
+    button.innerText = button.innerText === "Pending" ? "Completed" : "Pending";
 }
 
 function deleteTodo(button) {
@@ -39,7 +39,7 @@ function deleteTodo(button) {
 
 function deleteAllTodos() {
     const todoList = document.getElementById("todoList");
-    todoList.innerHTML = '<tr><td colspan="4">No task found</td></tr>';
+    todoList.innerHTML = '<tr><td colspan="4">NO task found</td></tr>';
 }
 
 function checkEmptyList() {
@@ -50,8 +50,3 @@ function checkEmptyList() {
         todoList.appendChild(emptyRow);
     }
 }
-document.getElementById("todoInput").addEventListener("keypress", function(event) {
-    if (event.key === 'Enter') {
-        addTodo();
-    }
-});
